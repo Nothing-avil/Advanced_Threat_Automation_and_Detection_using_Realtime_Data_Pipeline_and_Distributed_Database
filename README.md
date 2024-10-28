@@ -1,9 +1,16 @@
 # AI-Powered-Cyber-Threat-Detection-System
+
+> “In a world of increasing complexity and evolving threats, real-time intelligence is not just an advantage—it’s essential.”
+
 ###
+
 ## Problem: _Growing cybersecurity threats make manual threat detection inefficient._
 Solution: A system that uses machine learning models to detect and flag anomalous network traffic or security breaches in real-time, using AI.
+
 ###
+
 ## Technology:
+
 **Frontend**: React.js for the dashboard interface.
 
 **Backend**: Python-based threat detection models, Flask/Django for APIs.
@@ -12,7 +19,6 @@ Solution: A system that uses machine learning models to detect and flag anomalou
 
 **Database**: MongoDB/PostgreSQL.
 
-###
 ###
 
 **_Need_**: Organizations are constantly at risk from new and evolving threats, making real-time, AI-driven solutions increasingly critical.

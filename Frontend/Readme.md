@@ -9,33 +9,34 @@ The project directory is organized as follows:
 
 ```bash
 ├── public/
-│   ├── index.html
-│   └── assets/               # Static assets like images, icons, and logos
+│   ├── index.html            # Main HTML file
+│   └── assets/               # Static files (e.g., icons, logos)
 ├── src/
-│   ├── components/           # Reusable UI components for the dashboard
-│   │   ├── Header.js
-│   │   ├── Sidebar.js
-│   │   ├── ThreatTable.js
-│   │   ├── Chart.js
-│   │   └── AlertModal.js
-│   ├── pages/                # Main pages in the application
-│   │   ├── Dashboard.js
-│   │   ├── ThreatDetails.js
-│   │   └── Reports.js
-│   ├── services/             # API calls to backend services
-│   │   ├── api.js
-│   ├── utils/                # Helper functions and utilities
-│   │   ├── formatDate.js
-│   │   └── config.js
-│   ├── App.js                # Main App component
+│   ├── components/           # Reusable UI components
+│   │   ├── Header.js         # Top navigation bar
+│   │   ├── Sidebar.js        # Side menu with navigation links
+│   │   ├── ThreatTable.js    # Table for displaying threats
+│   │   ├── AlertModal.js     # Modal for alert details
+│   │   ├── Chart.js          # Data visualization using Chart.js
+│   │   └── Notification.js   # Real-time alert display
+│   ├── pages/                # Main application pages
+│   │   ├── Dashboard.js      # Main dashboard with visualizations
+│   │   ├── ThreatDetails.js  # Detailed threat information page
+│   │   └── Reports.js        # Historical threat reports
+│   ├── services/             # API calls to the backend
+│   │   ├── api.js            # API configurations for accessing backend data
+│   ├── utils/                # Helper functions
+│   │   ├── formatData.js     # Format data for visualization
+│   │   └── config.js         # Frontend configurations (e.g., API endpoints)
+│   ├── App.js                # Main application component
 │   ├── index.js              # Entry point
-│   └── styles/               # Global and component-specific CSS styles
-│       ├── App.css
-│       ├── Dashboard.css
-│       └── Components.css
-├── .env                      # Environment variables (e.g., API endpoints)
+│   └── styles/               # CSS for styling components
+│       ├── App.css           # Global styles
+│       ├── Dashboard.css     # Styles specific to the dashboard
+│       └── Components.css    # Styles for individual components
+├── .env                      # Environment variables for frontend
 ├── package.json
-└── README.md
+└── README.md                 # Project documentation
 ```
 
 

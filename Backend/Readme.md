@@ -6,30 +6,31 @@ This README provides an overview of the backend structure for the AI-Powered Cyb
 The backend directory is organized as follows:
 ```bash
 ├── app/
-│   ├── __init__.py           # Initialize Flask/Django app and configuration
-│   ├── config.py             # Configuration settings (e.g., database, environment)
-│   ├── models/               # Database models
-│   │   ├── Threat.py
-│   │   └── User.py
-│   ├── routes/               # API endpoints
-│   │   ├── alerts.py
-│   │   ├── auth.py
-│   │   └── reports.py
-│   ├── services/             # Core logic for threat detection and ML model integration
-│   │   ├── anomaly_detection.py
-│   │   ├── data_processing.py
-│   │   └── notification.py
-│   ├── utils/                # Helper functions and utility scripts
-│   │   ├── db.py
-│   │   └── logger.py
-│   ├── tests/                # Unit and integration tests
-│   │   ├── test_routes.py
-│   │   └── test_models.py
-│   └── main.py               # Main entry point for running the app
-├── requirements.txt          # Project dependencies
-├── .env                      # Environment variables (e.g., API keys, database URLs)
-├── README.md                 # Documentation (this file)
-└── run.py                    # Script to run the application
+│   ├── __init__.py            # Initialize Flask app and configurations
+│   ├── config.py              # Configuration settings for database, Kafka, etc.
+│   ├── models/                # Database models
+│   │   ├── Threat.py          # Threat data model for Cassandra
+│   │   └── User.py            # User data model
+│   ├── routes/                # API endpoints
+│   │   ├── alerts.py          # Endpoint for retrieving alerts
+│   │   ├── auth.py            # User authentication
+│   │   └── reports.py         # Endpoint for generating reports
+│   ├── services/              # Core logic for data processing and ML
+│   │   ├── anomaly_detection.py  # ML model loading and predictions
+│   │   ├── data_ingestion.py      # Ingestion from Kafka to Cassandra
+│   │   └── notification_service.py # Send alerts via Twilio/Slack
+│   ├── utils/                 # Helper functions
+│   │   ├── db.py              # Database connections and queries for Cassandra
+│   │   └── logger.py          # Custom logging
+│   ├── tests/                 # Tests for backend functionality
+│   │   ├── test_routes.py     # Test for API routes
+│   │   └── test_models.py     # Test for database models
+│   └── main.py                # Main entry point for running the app
+├── Dockerfile                 # Docker configuration for containerization
+├── requirements.txt           # Python dependencies
+├── .env                       # Environment variables for the backend (e.g., DB URIs)
+├── README.md                  # Project documentation
+└── run.py                     # Script to start the application
 ```
 
 ### <h1>Folder Structure Details</h1>
@@ -60,7 +61,7 @@ The backend directory is organized as follows:
      - **test_routes.py**: Tests for API endpoints to verify data integrity, security, and response structure.
      - **test_models.py**: Tests for database models, ensuring correct schema structure and integrity.
    
-   - **main.py**: Main application entry file that runs the server. It initializes the app, loads configuration, and starts the web server.
+   - **main.py**: Main application entry file that runs the server. It initializes the app, loads the configuration, and starts the web server.
 
 2. **requirements.txt**
    - Lists all Python packages and dependencies required for running the backend. This includes Flask/Django, machine learning libraries, database connectors, etc.

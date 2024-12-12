@@ -1,0 +1,204 @@
+/* Header Styles */
+.header {
+  background: rgba(26, 31, 53, 0.95) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-title {
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.notification-badge {
+  margin-right: 16px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  background: rgba(26, 31, 53, 0.95) !important;
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  width: 240px;
+}
+
+.sidebar-item {
+  margin: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.sidebar-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-item.active {
+  background-color: rgba(24, 144, 255, 0.2);
+  border-left: 3px solid #1890ff;
+}
+
+.sidebar-icon {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease;
+}
+
+.sidebar-item:hover .sidebar-icon,
+.sidebar-item.active .sidebar-icon {
+  color: #1890ff;
+}
+
+.sidebar-text {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  margin-left: 12px;
+}
+
+/* Threat Table Styles */
+.threat-table-container {
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.threat-table {
+  width: 100%;
+}
+
+.threat-table th {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.threat-row {
+  transition: background-color 0.3s ease;
+}
+
+.threat-row:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.threat-row td {
+  padding: 16px;
+  color: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.severity-chip {
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.severity-high {
+  background-color: rgba(255, 77, 79, 0.15) !important;
+  color: #ff4d4f !important;
+  border: 1px solid rgba(255, 77, 79, 0.3);
+}
+
+.severity-medium {
+  background-color: rgba(250, 173, 20, 0.15) !important;
+  color: #faad14 !important;
+  border: 1px solid rgba(250, 173, 20, 0.3);
+}
+
+.severity-low {
+  background-color: rgba(82, 196, 26, 0.15) !important;
+  color: #52c41a !important;
+  border: 1px solid rgba(82, 196, 26, 0.3);
+}
+
+/* Alert Modal Styles */
+.alert-modal {
+  background-color: rgba(26, 31, 53, 0.95) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.alert-modal-title {
+  color: #ffffff;
+  font-weight: 600;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.alert-modal-content {
+  padding: 24px;
+}
+
+.alert-modal-actions {
+  padding: 16px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Notification Styles */
+.notification {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.notification:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.notification-title {
+  color: #ffffff;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.notification-time {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+}
+
+/* Chart Styles */
+.chart-wrapper {
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-header {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chart-container {
+  flex-grow: 1;
+  position: relative;
+  min-height: 300px;
+}
+
+/* Animation for new threats */
+@keyframes highlight {
+  0% {
+    background-color: rgba(24, 144, 255, 0.2);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.threat-row.new-threat {
+  animation: highlight 2s ease-out;
+}

@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.chart-container {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+.MuiPaper-root {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(10px);
+}
+
+.threat-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.threat-table th {
+  font-weight: 500;
+  text-align: left;
+  padding: 12px;
+}
+
+.threat-table td {
+  padding: 12px;
+}
+
+.status-chip {
+  border-radius: 12px;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}

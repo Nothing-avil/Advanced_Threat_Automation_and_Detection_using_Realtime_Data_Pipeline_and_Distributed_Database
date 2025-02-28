@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Anomaly Visualization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/alert.css') }}">
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+    <script src="https://creattie.com/js/embed.js?id=3f6954fde297cd31b441" defer></script>
+</head>
+
+<body>
+    <div id="dashboard-container">
+        <header id="dashboard-header">
+            <h1 id="dashboard-title">Intrusion Detection System Dashboard</h1>
+            <nav id="dashboard-nav">
+                <ul id="nav-list">
+                    <li><a id="nav-dashboard" href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                    <li><a id="nav-logout" href="{{ url_for('logout') }}">Logout</a></li>
+                    <li><a id="nav-map" href="{{ url_for('map') }}">Map</a></li>
+                    <li>
+                        <a href="{{ url_for('anomaly_alert') }}">
+                          Alert <span id="alert-badge" style="display: none; color: red;">⚠️</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <div id="anomaly-alert">
+        <dotlottie-player 
+            src="https://lottie.host/ce4e15eb-01fd-4b82-ad55-35dddc7af0e0/tmxgIcD8Cg.lottie" 
+            background="transparent" 
+            speed="1" 
+            style="width: 400px; height: 50% ;padding-bottom: 180px" 
+            loop 
+            autoplay>
+        </dotlottie-player>
+        <p>⚠ Anomaly Detected! Please Check the System. ⚠</p>
+    </div>
+
+    <div id="secured_system">
+        <creattie-embed
+            src="https://d1jj76g3lut4fe.cloudfront.net/saved_colors/114764/WHEm5wkxUG5MrYES.json"
+            delay="1"
+            speed="125"
+            frame_rate="24"
+            trigger="loop-on-hover"
+            style="width:400px;height:400px">
+        </creattie-embed>
+        <p>😉System is healthy...✅</p>
+    </div>
+
+    <footer>
+        <div id="three-container"></div>
+        <div id="instructions">Click and drag to control the animation</div>
+    </footer>
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/three.js/r75/three.min.js'></script>
+    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/TextGeometry.js'></script>
+    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/FontUtils.js'></script>
+    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/pnltri.min.js'></script>
+    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/droid_sans_bold.typeface.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
+    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/bas.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+    <script src="{{ url_for('static', filename='js/alert.js') }}"></script>
+    <script>
+        THREE.ShapeUtils.triangulateShape = (function () {
+            var pnlTriangulator = new PNLTRI.Triangulator();
+            return function triangulateShape(contour, holes) {
+                return pnlTriangulator.triangulate_polygon([contour].concat(holes));
+            };
+        })();
+    </script>
+</body>
+
+</html>

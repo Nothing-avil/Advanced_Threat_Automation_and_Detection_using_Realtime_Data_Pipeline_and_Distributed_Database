@@ -1,0 +1,247 @@
+/* Ensure anomaly alert is fixed at the top */
+#anomaly-alert {
+  display: none;
+  position: fixed;
+  top: 10%;
+  left: 550px;
+  transform: translateX(-50%);
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 0, 0, 0.1); /* Light red background */
+  border: 2px solid red;
+  border-radius: 10px;
+  max-width: 350px;
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+  z-index: 1000;
+  animation: pulse 1.5s infinite alternate;
+  margin-bottom: 180px;
+  align-items: center;
+  margin-top: 50px;
+
+}
+
+#secured_system{
+  position: fixed;
+  top: 10%;
+  left: 550px;
+  transform: translateX(-50%);
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(20, 178, 12, 0.619); /* Light red background */
+  border: 2px solid rgba(34, 145, 0, 0.552);
+  border-radius: 10px;
+  max-width: 350px;
+  box-shadow: 0 4px 8px rgba(31, 219, 21, 0.964);
+  z-index: 1000;
+  animation: pulse 1.5s infinite alternate;
+  margin-bottom: 180px;
+  align-items: center;
+  margin-top: 150px;
+
+}
+
+/* Ensure anomaly animation stays within alert */
+#anomaly-alert dotlottie-player {
+  width: 100%;
+  max-width: 300px;
+  max-height: 100px;
+  margin-bottom: 10px; /* Add spacing */
+  margin-top: 50px;
+}
+
+#secured_system creattie-embed{
+  width: 100%;
+  max-width: 300px;
+  max-height: 100px;
+  margin-bottom: 10px;
+  margin-top: 50px;
+}
+
+/* Styling for the anomaly alert message */
+#anomaly-alert p {
+  color: red;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* Keep footer fixed at the bottom */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+}
+
+/* Ensure 3D visualization container has enough height */
+#three-container {
+  width: 100%;
+  height: 40vh; /* Adjusted height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Instruction box for better visibility */
+#instructions {
+  position: relative;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  white-space: nowrap;
+  margin-top: 10px; /* Added space */
+}
+
+/* Pulsating effect for alert */
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(1.05);
+      opacity: 0.9;
+  }
+}
+
+/* Ensure body takes full height */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+#dashboard-header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #222 100%);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+/* Title Styling */
+#dashboard-title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #00ffff;
+    text-shadow: 0 0 8px #00ffff, 0 0 16px rgba(0, 255, 255, 0.5);
+}
+
+/* Navigation Styling */
+#dashboard-nav {
+    margin-top: 20px;
+}
+
+/* Navigation List */
+#nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Navigation Links */
+#nav-list li {
+    display: inline-block;
+}
+
+#nav-list li a {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    font-size: 1.1rem;
+}
+
+/* Individual Link Colors */
+#nav-dashboard { color: #f8f8f8; }
+#nav-logout { color: #fdfdfd; }
+#nav-map { color: #ffffff; }
+#nav-alert { color: #fffbfb; }
+
+/* Hover Effects */
+#nav-list li a::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+    transition: width 0.3s ease, height 0.3s ease, left 0.3s ease, top 0.3s ease;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+#nav-list li a:hover::before {
+    width: 150%;
+    height: 150%;
+    left: -25%;
+    top: -25%;
+}
+
+#nav-list li a:hover {
+    text-shadow: 0 0 8px #ffffff;
+    transform: scale(1.1);
+}
+
+/* Active Click Effect */
+#nav-list li a:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  #anomaly-alert,
+  #secured_system {
+    top: 5%;
+    padding: 15px;
+    margin-bottom: 100px;
+  }
+  
+  #anomaly-alert dotlottie-player,
+  #secured_system creattie-embed {
+    max-width: 250px;
+    max-height: 80px;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  #anomaly-alert,
+  #secured_system {
+    top: 2%;
+    padding: 10px;
+    margin-bottom: 50px;
+  }
+  
+  #anomaly-alert dotlottie-player,
+  #secured_system creattie-embed {
+    max-width: 200px;
+    max-height: 60px;
+    margin-top: 20px;
+  }
+}
